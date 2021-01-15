@@ -12,7 +12,7 @@
   --accent-color: #2196f3;
 
   --animation-duration: 250ms;
-  --animation-type: linear;
+  --animation-type: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -346,8 +346,6 @@ img {
 }
 
 .overlay .text {
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
@@ -641,6 +639,35 @@ img {
 
 .portfolio-link {
   display: block;
+}
+
+.portfolio-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-image .text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-align: left;
+}
+
+.portfolio-image .overlay {
+  position: absolute;
+  width: 100%;
+  height: 294px;
+  background: rgba(33, 150, 243, 0.9);
+  padding-right: 24px;
+  padding-left: 24px;
+  transition: transform var(--animation-duration) var(--animation-type);
+}
+
+.portfolio-link:focus .overlay,
+.portfolio-link:hover .overlay {
+  transform: translateY(-100%);
 }
 
 .portfolio-link:hover,
