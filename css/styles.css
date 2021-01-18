@@ -187,6 +187,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color var(--animation-duration) var(--animation-type);
 }
 
 .mail {
@@ -255,6 +256,54 @@ img {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity var(--animation-duration) var(--animation-type);
+}
+
+.modal {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 8px;
+
+  width: 528px;
+  height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.close-modal {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  background-image: url(../images/close-button/Vector.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  color: #000000;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* особенности */
@@ -445,6 +494,7 @@ img {
   border-radius: 50%;
   background-color: #ffffff;
   color: #afb1b8;
+  transition: all var(--animation-duration) var(--animation-type);
 }
 
 .social-icon {
@@ -484,6 +534,7 @@ img {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
+  transition: all var(--animation-duration) var(--animation-type);
 }
 
 .icon-client {
@@ -565,6 +616,7 @@ img {
 .footer-social .icon-link {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
+  transition: background-color var(--animation-duration) var(--animation-type);
 }
 
 .social-icon {
@@ -605,6 +657,8 @@ img {
   border-radius: 4px;
 
   text-align: center;
+
+  transition: all var(--animation-duration) var(--animation-type);
 }
 
 .filter-items .item:not(:last-child) {
@@ -639,6 +693,7 @@ img {
 
 .portfolio-link {
   display: block;
+  transition: box-shadow var(--animation-duration) var(--animation-type);
 }
 
 .portfolio-image {
@@ -646,7 +701,7 @@ img {
   overflow: hidden;
 }
 
-.portfolio-image .text {
+.text-portfolio {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
@@ -657,12 +712,16 @@ img {
 
 .portfolio-image .overlay {
   position: absolute;
+
+  display: flex;
+
   width: 100%;
   height: 294px;
   background: rgba(33, 150, 243, 0.9);
   padding-right: 24px;
   padding-left: 24px;
   transition: transform var(--animation-duration) var(--animation-type);
+  align-items: center;
 }
 
 .portfolio-link:focus .overlay,
